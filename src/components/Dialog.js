@@ -54,8 +54,8 @@ export const ModalTitleBar = styled.div`
   width: 100%;
   padding: ${em(1)} ${em(1)};
   background-color: ${props => props.theme.whiteColor};
-  border-top-left-radius: ${props => props.theme.borderRadius * 2};
-  border-top-right-radius: ${props => props.theme.borderRadius * 2};
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 `;
 
 export const ModalTitle = styled.h2`
@@ -81,8 +81,8 @@ export const ModalFooter = styled.div`
   padding: ${em(1)};
   border-top: 1px solid ${props => props.theme.borderColor};
   background-color: ${props => props.theme.whiteColor};
-  border-bottom-left-radius: ${props => props.theme.borderRadius * 2};
-  border-bottom-right-radius: ${props => props.theme.borderRadius * 2};
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 `;
 
 export const CloseButton = styled.button`
