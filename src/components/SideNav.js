@@ -36,7 +36,10 @@ export const NavButton = styled.button`
   ${resetButton()}
   font-size: ${em(1.2)};
   color: ${props => props.theme.whiteColor};
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: ${props => props.active ? props.theme.sideNavBorderColor : (props.success ? props.theme.successColor : 'transparent')};
+  ${props => props.icon ? `background-image: url("${props.icon}");` : ''}
   width: ${em(4)};
   height: ${em(4)};
   border-bottom: 1px solid ${props => props.theme.sideNavBorderColor};
