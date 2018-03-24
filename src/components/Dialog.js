@@ -108,7 +108,7 @@ export default ({ open, title, children, primaryLabel = 'OK', secondaryLabel, on
     <ModalWrapper width={width} className={`${dialogSize === 'large' ? 'dialog-large' : ''}`}>
       <ModalHeader title={title} showClose={true} onClose={onClose} />
       <ModalContent style={dialogSize === 'large' ? {} : { maxHeight: `${em(30)}` }}>{children}</ModalContent>
-      {(primaryLabel && secondaryLabel) &&
+      {(primaryLabel || secondaryLabel) &&
         <ModalFooter>
           {primaryLabel &&
             <Button type="button" primary onClick={onPrimary}>{primaryLabel}</Button>}
