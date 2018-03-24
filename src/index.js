@@ -16,16 +16,6 @@ import Input from './components/Input';
 import Label from './components/Label';
 import Select from './components/Select';
 import SelectField from './components/SelectField';
-import {
-  SideNav,
-  NavItem,
-  NavPanel,
-  NavButton,
-  NavSectionTitle,
-  NavSectionMenuItem,
-  SideNavSpacer,
-  SideNavSearchWrapper,
-} from './components/SideNav';
 import Tabs from './components/Tabs';
 import Text from './components/Text';
 import Textarea from './components/Textarea';
@@ -62,14 +52,6 @@ export {
   Label,
   Select,
   SelectField,
-  SideNav,
-  NavItem,
-  NavPanel,
-  NavButton,
-  NavSectionTitle,
-  NavSectionMenuItem,
-  SideNavSpacer,
-  SideNavSearchWrapper,
   Tabs,
   Text,
   Textarea,

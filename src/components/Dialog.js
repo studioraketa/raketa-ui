@@ -54,8 +54,8 @@ export const ModalTitleBar = styled.div`
   width: 100%;
   padding: ${em(1)} ${em(1)};
   background-color: ${props => props.theme.whiteColor};
-  border-top-left-radius: ${props => props.theme.borderRadius};
-  border-top-right-radius: ${props => props.theme.borderRadius};
+  border-top-left-radius: ${props => props.theme.borderRadius * 2};
+  border-top-right-radius: ${props => props.theme.borderRadius * 2};
 `;
 
 export const ModalTitle = styled.h2`
@@ -81,8 +81,8 @@ export const ModalFooter = styled.div`
   padding: ${em(1)};
   border-top: 1px solid ${props => props.theme.borderColor};
   background-color: ${props => props.theme.whiteColor};
-  border-bottom-left-radius: ${props => props.theme.borderRadius};
-  border-bottom-right-radius: ${props => props.theme.borderRadius};
+  border-bottom-left-radius: ${props => props.theme.borderRadius * 2};
+  border-bottom-right-radius: ${props => props.theme.borderRadius * 2};
 `;
 
 export const CloseButton = styled.button`
@@ -108,10 +108,14 @@ export default ({ open, title, children, primaryLabel = 'OK', secondaryLabel, on
     <ModalWrapper width={width} className={`${dialogSize === 'large' ? 'dialog-large' : ''}`}>
       <ModalHeader title={title} showClose={true} onClose={onClose} />
       <ModalContent style={dialogSize === 'large' ? {} : { maxHeight: `${em(30)}` }}>{children}</ModalContent>
-      <ModalFooter>
-        {primaryLabel !== '' ? <Button type="button" primary onClick={onPrimary}>{primaryLabel}</Button> : ''}
-        {secondaryLabel ? <Button type="button" onClick={onSecondary}>{secondaryLabel}</Button> : ''}
-      </ModalFooter>
+      {(primaryLabel && secondaryLabel) &&
+        <ModalFooter>
+          {primaryLabel &&
+            <Button type="button" primary onClick={onPrimary}>{primaryLabel}</Button>}
+          {secondaryLabel &&
+            <Button type="button" onClick={onSecondary}>{secondaryLabel}</Button>}
+        </ModalFooter>
+      }
     </ModalWrapper>
   </Modal>
 );
