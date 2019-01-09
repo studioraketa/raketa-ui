@@ -21,7 +21,7 @@ export default (props) => {
     <FormControl>
       {label ? (<Label htmlFor={id} error={props.error}>{label}</Label>) : ''}
       <Select id={id} onChange={(e) => onChange(e.target.value)} {...inputProps}>
-        {placeholder ? <option key="placeholder" value="">{placeholder}</option> : ''}
+        {placeholder ? <option key="placeholder" value={null}>{placeholder}</option> : ''}
         {options.map(o => <option key={o.value} value={o.value}>{o.text}</option>)}
       </Select>
       {hint ? (<Hint>{hint}</Hint>) : ''}
